@@ -1,5 +1,6 @@
 package Week1;
 
+
 /**
  * Created by yafengwang on 9/11/16.
  *
@@ -12,6 +13,7 @@ public class QuickFind {
     public QuickFind(int N) {
         /**
          * Constructor for Union-Find data type, this initializes the id array which holds the connections
+         * @ interpretation: two objects are connected iff value in corresponding id array are the same
          * @ input: N, number of total objects
          */
         id = new int[N];
@@ -24,9 +26,12 @@ public class QuickFind {
         /**
          * Merge component that contains p into component that contains q
          */
+        int pid = id[p];
+        int qid = id[q];
+
         for(int i=0 ; i < id.length ; i++) {
-            if(id[i] == p) {
-                id[i] = q;
+            if(id[i] == pid) {
+                id[i] = qid;
             }
         }
     }
@@ -44,8 +49,5 @@ public class QuickFind {
          */
         return id[p] == id[q];
     }
-
-
-
 
 }
