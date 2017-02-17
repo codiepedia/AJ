@@ -1,2 +1,4 @@
 .idea/
 PrincetonAlgorithm.iml
+.DS_Store
+src/.DS_Store
